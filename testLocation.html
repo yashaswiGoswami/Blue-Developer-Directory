@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>test location</title>
+</head>
+<body>
+   <p>Click below to get your coordinates:</p>
+<button onclick="showLocation()">Click</button>
+
+<p id="demo"></p>
+<script>
+var x=document.getElementById("demo");
+function showLocation(){
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else{x.innerHTML="Geolocation is not supported by this browser.";}
+ }
+function showPosition(position){
+  alert("Latitude: " + position.coords.latitude +
+  "  Longitude: " + position.coords.longitude)
+  }
+</script>
+</body>
+</html>

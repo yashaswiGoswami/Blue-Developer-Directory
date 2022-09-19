@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Try local Storage</title>
+   <script type="text/javascript">
+      function subscribe(){
+         var email=document.getElementById("email");
+         localStorage.setItem("Subscriber", email.value);
+      }
+      function display_text(){
+         if(localStorage.getItem("Subscriber")!=null){
+            document.getElementById("sub_text").innerHTML="<p>Hii! welcome back <strong>"+
+               localStorage.getItem("Subscriber") +"</strong></p>";
+         }else{
+            document.getElementById("sub_text").innerHTML="<p><strong>Please subscribe to stay tuned.</strong> </p>";
+         }
+      }
+      function clear(){
+         localStorage.clear();
+         window.location.reload();
+      }
+   </script>
+
+</head>
+<body onload="display_text()">
+   <div id="sub_text">
+      <!-- some text  to be filled. -->
+   </div>
+
+   <div>
+      <h2>Enter your email to subscribe</h2>
+      <form onsubmit="subscribe()">
+         <input type="email" name="email" id="email">
+         <input type="submit" value=" Subscribe">
+         <a href="javascript:clear()">Clear Local Storage</a>
+      </form>
+     
+   </div>
+   
+</body>
+</html>

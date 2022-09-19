@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Blue Developer Directory</title>
+<script type="text/javascript">
+   function subscribe(){
+      var email=document.getElementById("email");
+      localStorage.setItem("Subscriber", email.value);
+   }
+   function display_text(){
+      if(localStorage.getItem("Subscriber")!=null){
+         document.getElementById("sub_text").innerHTML="<p>Hii! welcome back <strong>"+
+            localStorage.getItem("Subscriber") +"</strong></p>";
+      }else{
+         document.getElementById("sub_text").innerHTML="<p><strong>Please subscribe to stay tuned.</strong> </p>";
+      }
+   }
+   function clear(){
+      localStorage.clear();
+      window.location.reload();
+   }
+</script>
+</head>
+
+<body onload="display_text()">
+<div id="container">
+	<header>
+        <h1><span class="blue-text">Blue</span> Developer Directory</h1>
+        <h2>Find A Developer <span class="white-text">NOW</span></h2>
+     </header>  <!--header end-->
+        
+     <nav id="menu">
+      <ul>
+         <li class="menuitem"><a href="index.html">Home</a></li>
+         <li class="menuitem"><a href="about.html">About Us</a></li>
+         <li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+         <li class="menuitem"><a href="register.html">Register/a></li>
+         <li class="menuitem"><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    
+    <aside>
+      <nav id="leftmenu">
+      <h3>Links</h3>
+         <ul>
+            <li><a href="browse.html">SEO</a></li>
+            <li><a href="browse.html">PHP</a></li>
+            <li><a href="browse.html">Ajax</a></li>
+            <li><a href="browse.html">jQuery</a></li>
+            <li><a href="browse.html">Web design</a></li>
+            <li><a href="browse.html">Web Programming</a></li>
+            <li><a href="browse.html">Content Creation</a></li>
+            <li><a href="browse.html">Internet Marketing</a></li>
+            <li><a href="browse.html">XHTML Templates</a></li>
+         </ul>
+      </nav>
+   </aside><!--leftmenu end-->
+    
+	<section>
+      <h3>Register</h3>
+      <div>
+         <h2>Enter your email to subscribe</h2>
+         <form onsubmit="subscribe()">
+            <input type="email" name="email" id="email">
+            <input type="submit" value=" Subscribe">
+            <a href="javascript:clear()">Clear Local Storage</a>
+         </form>
+         <div id="sub_text">
+				
+			</div>
+   
+   </section><!--content end-->
+	
+</div><!--container end-->
+<div style="clear:both;"></div>
+<footer>
+   Copyright &copy; 2013, Blue Web Developer Directory
+</footer>
+</body>
+</html>

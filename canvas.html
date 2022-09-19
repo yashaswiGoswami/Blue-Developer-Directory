@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=
+   , initial-scale=1.0">
+   <title>Canvas Example</title>
+   <style>
+      #div1, #div2 {
+         float: left;
+         width: 100px;
+         height: 100px;
+         margin: 10px;
+         padding: 10px;
+         border: 1px solid black;
+         }
+   </style>
+   <script type="text/javascript" src="script_canvas.js"></script>
+</head>
+
+<body onload="makecanvas()">
+
+   <!--Drag n Drop event-->
+
+   <h2>Drag and Drop</h2>
+   <p>Drag the image back and forth between the two div elements.</p>
+   <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="images/web.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+   </div>
+   <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   <!--Drag and drop elements-->
+   <br>
+   <p></p>
+
+
+   <div class="video">
+      <div style="text-align:center"> 
+         <button onclick="playPause()">Play/Pause</button> 
+         <button onclick="makeBig()">Big</button>
+         <button onclick="makeSmall()">Small</button>
+         <button onclick="makeNormal()">Normal</button>
+         <br><br>
+         <video id="video1" width="420">
+           <source src="videos/samplevideo.mp4" type="video/mp4">
+           Your browser does not support HTML video.
+         </video>
+       </div> 
+   </div>
+   <div>
+   <h2>This is just a canvas example</h2>
+   <!--Canvas example markup-->
+   <canvas id="canvas1" width="200" height="100" style="border: 1px solid #ff0000;" ></canvas>
+   <p>
+      <canvas id="canvas2" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="makeCircle()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas3" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="writeText()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas4" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="fillLinearGradient()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas5" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="fillCircleGradient()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas6" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="fillImage()"></canvas>
+   </p>
+   <p>
+   <img src="images/web.jpg" alt="create images" id="img1">
+   </p>
+   <p>
+      <canvas id="canvas7" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="createShape()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas8" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="makeMultipleCircle()"></canvas>
+   </p>
+   <p>
+      <canvas id="canvas9" width="200" height="100" 
+      style="border: 1px solid #ff0000;" onclick="fillAnimation()"></canvas>
+   </p>
+   </div>
+</body>
+
+</html>

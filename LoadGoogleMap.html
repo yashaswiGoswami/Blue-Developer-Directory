@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src = "https://maps.googleapis.com/maps/api/js"></script>s
+   <title>Load Google Map</title>
+</head>
+<body>
+   <div id = "sample" style = "width:580px; height:400px;"></div>
+   <script>
+if (navigator.geolocation) {
+			var timeoutVal = 10 * 1000 * 1000;
+			navigator.geolocation.getCurrentPosition(
+				displayPosition);
+		}
+		else {
+			alert("Geolocation is not supported by this browser");
+		}
+		function displayPosition(position) {
+			//var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			var options = {
+				zoom: 10,	
+				center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("sample"), options);
+         var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+				map: map,
+				title: "User location"
+			});
+      }		       
+      //google.maps.event.addDomListener(window, 'load', loadMap);
+      google.maps.event.addDomLietener(marker, 'load', loadMap);
+   </script>
+   
+</body>
+</html>

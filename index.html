@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Blue Developer Directory</title>
+	<script type="text/javascript">
+		function subscribe(){
+			var text=document.getElementById("sub_name");
+			localStorage.setItem("subscriber",text.value);
+		}
+		function display_sub(){
+			if(localStorage.getItem("subscriber")!=null){
+				document.getElementById("sub_text").innerHTML="<p> Welcome " + localStorage.getItem("subscriber")+" </p>";
+			}else{
+				document.getElementById("sub_text").innerHTML="Kindly subscribe to stay updated.";
+			}
+		}
+		function clear(){
+         localStorage.clear();
+         window.location.reload();
+      }
+	</script>
+</head>
+<body onload="display_sub()">
+	<div id="container">
+		<header>
+			<h1><span class="blue-text">Blue</span> Developer Directory</h1>
+			<h2>Find A Developer <span class="white-text">NOW</span></h2>
+		</header>
+
+		<nav id="menu">
+			<ul>
+				<li class="menuitem"><a href="index.html">Home</a></li>
+				<li class="menuitem"><a href="about.html">About Us</a></li>
+				<li class="menuitem"><a href="browse.html">Browse Developers</a></li>
+				<li class="menuitem"><a href="contact.html">Contact Us</a></li>
+			</ul>
+	    </nav>
+		 
+		 <aside>
+			<nav id="leftmenu">
+			<h3>Links</h3>
+				<ul>
+					<li><a href="browse.html">SEO</a></li>
+					<li><a href="browse.html">PHP</a></li>
+					<li><a href="browse.html">Ajax</a></li>
+					<li><a href="browse.html">jQuery</a></li>
+					<li><a href="browse.html">Web design</a></li>
+					<li><a href="browse.html">Web Programming</a></li>
+					<li><a href="browse.html">Content Creation</a></li>
+					<li><a href="browse.html">Internet Marketing</a></li>
+					<li><a href="browse.html">XHTML Templates</a></li>
+				</ul>
+				<br>
+			<h2>Newsletter</h2>
+			<div id="sub_form">
+			<form id="sub_list" onsubmit="subscribe()">
+				<input type="email" id="sub_name" name="sub_name">
+				<input type="submit" value=" Subscribe">
+				<a href="javascript:clear()">Clear Local Storage</a>
+			</form>
+			</div>
+			<br>
+			<div id="sub_text">
+				
+			</div>
+			</nav>
+			
+		</aside>
+
+		<section>
+			<h2>Welcome to Blue Developer Directory! </h2>
+			<img class="float" src="images/web.jpg" alt="web developer directory">
+			<h3>Who Are We?</h3>
+			<p>We are a fictional website and service that list top web developers around the world. Search and browse
+				fictional web developers on our website absolutley FREE!</p>
+			<h3>What Skills Do Our Developers Have?</h3>
+			<p>Our listed fictional web developers skill ranges from Graphic design with Photoshop, Illustrator and
+				Fireworks to markup languages like HTML5, XHTML and XML to programming languages such as Javascript, PHP,
+				Python and ASP</p>
+		</section>
+		<!--content end-->
+
+		<section>
+			<h2>Latest Blue Developers</h2>
+			<div class="developer">
+				<h4>Adam Sullivan</h4>
+				<ul>
+					<li><strong>Location: </strong> Boston USA</li>
+					<li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+					<li><strong>Availability:</strong> Full-Time
+				</ul>
+				<a href="#">View Profile</a>
+			</div>
+			<!--developer end-->
+			<div class="developer">
+				<h4>Rick Monroe</h4>
+				<ul>
+					<li><strong>Location: </strong> Boston USA</li>
+					<li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+					<li><strong>Availability:</strong> Full-Time
+				</ul>
+				<a href="#">View Profile</a>
+			</div>
+			<!--developer end-->
+			<div class="developer">
+				<h4>Michael Oliver</h4>
+				<ul>
+					<li><strong>Location: </strong> Boston USA</li>
+					<li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+					<li><strong>Availability:</strong> Full-Time
+				</ul>
+				<a href="#">View Profile</a>
+			</div>
+			<!--developer end-->
+			<div class="developer">
+				<h4>Megan Jennings</h4>
+				<ul>
+					<li><strong>Location: </strong> Boston USA</li>
+					<li><strong>Skills: </strong> HTML/CSS, PHP, ROR</li>
+					<li><strong>Availability:</strong> Full-Time
+				</ul>
+				<a href="#">View Profile</a>
+			</div>
+			<!--developer end-->
+		</section>
+		<!--content end-->
+	</div>
+	<!--container end-->
+	<div style="clear:both;"></div>
+	<footer>
+		Copyright &copy; 2013, Blue Web Developer Directory
+	</footer>
+</body>
+
+</html>
